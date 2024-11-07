@@ -1,3 +1,5 @@
+# code enhanced with security from https://pynative.com/python-postgresql-tutorial/
+
 import psycopg2
 from psycopg2 import errors
 
