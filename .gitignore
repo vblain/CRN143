@@ -25,3 +25,4 @@ vendor/pkg/
 pyenv
 Vagrantfile
 .env
+*.ini

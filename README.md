@@ -41,3 +41,17 @@ docker exec {POSTGRES_CONTAINER_NAME} psql -U {POSTGRES_USER} -d sqlda -c "\dt"
 ```{powershell}
 docker exec {POSTGRES_CONTAINER_NAME} psql -U {POSTGRES_USER} -c "\l"
 ```
+
+## Python 
+
+### Security
+
+1. create config.ini in week 4 folder and add following - change information as needed
+```
+[postgresql]
+user = user
+password = password
+host = 127.0.0.1
+port = 5432
+database = postgres
+```
