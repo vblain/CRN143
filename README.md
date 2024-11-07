@@ -55,3 +55,5 @@ host = 127.0.0.1
 port = 5432
 database = postgres
 ```
+
+2. or rename config.ini.example to config.ini and change values
