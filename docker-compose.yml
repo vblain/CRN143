@@ -10,6 +10,8 @@ services:
       - "${POSTGRES_EXTERNAL_PORT}:${POSTGRES_INTERNAL_PORT}"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ${POSTGRES_LOCAL_PATH}:/temp
+      - ${SCRIPTS_PATH}:/scripts
 
   pgadmin:
     image: dpage/pgadmin4
@@ -18,9 +20,13 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     ports:
-      - ${PGADMIN_EXTERNAL_PORT}:${PGADMIN_INTERNAL_PORT}"
+      - "${PGADMIN_EXTERNAL_PORT}:${PGADMIN_INTERNAL_PORT}"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ${SCRIPTS_PATH}:/var/lib/pgadmin/storage/${PGADMIN_DEFAULT_EMAIL}/scripts
     depends_on:
       - postgres
 
 volumes:
   postgres_data:
+  pgadmin_data:
